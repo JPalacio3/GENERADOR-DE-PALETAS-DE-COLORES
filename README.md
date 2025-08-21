@@ -1,69 +1,114 @@
-# React + TypeScript + Vite
+# 🎨 Generador de Paletas de Colores Avanzado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido al Generador de Paletas de Colores! Una aplicación web moderna y completa construida con React, Vite y TypeScript, diseñada para ofrecer a diseñadores, desarrolladores y creativos un conjunto de herramientas potentes para trabajar con colores de manera eficiente y accesible.
 
-Currently, two official plugins are available:
+Esta aplicación no solo te permite generar paletas de colores aleatorias, sino que también incluye funcionalidades avanzadas como extracción de colores desde imágenes, generación de armonías, simuladores de visión de color y mucho más.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[➡️ Ver Demo en Vivo](https://your-live-demo-link.com)** (¡reemplaza este enlace con tu URL de despliegue!)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Características Principales
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este proyecto va más allá de un simple generador y ofrece un completo set de herramientas para el manejo del color:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **🎨 Generador de Paletas**: Crea paletas de colores personalizables. Puedes ajustar el número de colores y bloquear tus favoritos para mantenerlos mientras exploras nuevas combinaciones.
+- **🖼️ Extractor de Colores de Imágenes**: Sube una imagen y la aplicación extraerá automáticamente su paleta de colores dominante.
+- **🤝 Generador de Armonías de Color**: A partir de un color base, genera esquemas de color armoniosos (complementarios, triádicos, análogos, etc.).
+- **🧪 Mezclador de Colores (Blender)**: Combina dos colores para encontrar los tonos intermedios perfectos.
+- **♿ Comprobador de Contraste**: Asegura la accesibilidad de tus diseños verificando el ratio de contraste entre dos colores, cumpliendo con las directrices WCAG.
+- **👁️ Simulador de Daltonismo**: Visualiza tus paletas como las verían personas con diferentes tipos de daltonismo (protanopia, deuteranopia, tritanopia).
+- **🐾 Simulador de Visión Animal**: Una herramienta divertida y educativa para ver cómo perciben los colores diferentes animales.
+- **🌓 Tema Claro y Oscuro**: Interfaz cómoda para trabajar en cualquier condición de iluminación.
+- **💻 Diseño Responsivo**: Experiencia de usuario fluida tanto en dispositivos de escritorio como móviles.
+- **💾 Exportación a JSON**: Exporta tus paletas de colores generadas o extraídas en formato JSON para usarlas fácilmente en tus proyectos.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Arquitectura y Stack Tecnológico
+
+Este proyecto está construido con un enfoque moderno, priorizando el rendimiento, la escalabilidad y una excelente experiencia de desarrollo.
+
+- **Framework Frontend**: **React 19** para una interfaz de usuario declarativa y eficiente.
+- **Bundler y Entorno de Desarrollo**: **Vite** para un arranque de servidor de desarrollo instantáneo y un empaquetado optimizado para producción.
+- **Lenguaje**: **TypeScript** para añadir seguridad de tipos, mejorar la autocompletación y la mantenibilidad del código.
+- **Estilos**: **Styled-components** para escribir CSS-in-JS, permitiendo estilos dinámicos y encapsulados a nivel de componente.
+- **Extracción de Colores**: La biblioteca **ColorThief** se utiliza para la funcionalidad de extracción de colores de imágenes.
+- **Testing**: **Vitest** y **React Testing Library** para asegurar la fiabilidad y el correcto funcionamiento de los componentes.
+- **Linting**: **ESLint** para mantener un código limpio, consistente y libre de errores comunes.
+
+### 📁 Estructura del Proyecto
+
+La estructura de carpetas está organizada para ser intuitiva y escalable:
+
+```
+/
+├── public/          # Archivos estáticos (íconos, etc.)
+├── src/
+│   ├── assets/      # Recursos como imágenes y SVGs
+│   ├── components/  # Componentes reutilizables de React
+│   ├── contexts/    # Contextos de React (ej. ThemeProvider)
+│   ├── types/       # Definiciones de tipos de TypeScript
+│   └── utils/       # Funciones de utilidad (ej. manipulación de colores)
+├── tests/           # Archivos de prueba para Vitest
+├── .eslintrc.cjs    # Configuración de ESLint
+├── package.json     # Dependencias y scripts del proyecto
+└── vite.config.ts   # Configuración de Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Instalación y Uso Local
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+
+**1. Clona el repositorio:**
+
+```bash
+git clone https://github.com/JPalacio3/GENERADOR-DE-PALETAS-DE-COLORES.git
+cd GENERADOR-DE-PALETAS-DE-COLORES
 ```
+
+**2. Instala las dependencias:**
+Se recomienda usar `npm`, pero también puedes usar `yarn` o `pnpm`.
+
+```bash
+npm install
+```
+
+**3. Inicia el servidor de desarrollo:**
+Esto ejecutará la aplicación en modo de desarrollo con Hot-Reload.
+
+```bash
+npm run dev
+```
+
+Abre [http://localhost:5173](http://localhost:5173) (o el puerto que indique la terminal) en tu navegador para ver la aplicación.
+
+###📜 Scripts Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Compila y empaqueta la aplicación para producción en la carpeta `dist/`.
+- `npm run lint`: Ejecuta ESLint para analizar el código en busca de errores.
+- `npm run preview`: Sirve localmente el build de producción para previsualizarlo.
+- `npm run test`: Ejecuta las pruebas con Vitest.
+
+---
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Si tienes ideas para nuevas funcionalidades, mejoras o has encontrado un bug, por favor, abre un _issue_ para discutirlo o envía un _pull request_.
+
+---
+
+## 👤 Autor
+
+**JPalacio**
+
+- GitHub: [@JPalacio3](https://github.com/JPalacio3)
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
