@@ -12,6 +12,7 @@ import { Theme } from "./contexts/ThemeContext";
 import { useTheme } from "./contexts/useTheme";
 import AnimalColorVisionSimulator from "./components/AnimalColorVisionSimulator";
 import { hexToRgb, hexToHsl } from "./utils/colorUtils";
+import Footer from "./components/Footer";
 
 interface FormattedColor {
   hex: string | null;
@@ -528,6 +529,7 @@ const App: React.FC = () => {
         onClose={handleCloseJsonModal}
         jsonData={jsonModalData}
       />
+      <Footer />
     </AppContainer>
   );
 };
