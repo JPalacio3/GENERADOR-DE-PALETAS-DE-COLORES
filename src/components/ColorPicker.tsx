@@ -62,7 +62,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange }) => {
 
   return (
     <PickerContainer>
-      <PickerText style={{ color: hexToHsl("#0099ff") }}>
+      <PickerText style={{ color: hexToHsl("#0099ff") ?? "#000" }}>
         Selecciona un color:
       </PickerText>
       <CustomColorSwatch color={value} onClick={handleSwatchClick}>
