@@ -4,7 +4,7 @@
 
 Esta aplicación no solo te permite generar paletas de colores aleatorias, sino que también incluye funcionalidades avanzadas como extracción de colores desde imágenes, generación de armonías, simuladores de visión de color y mucho más.
 
-**[➡️ Ver Demo en Vivo](https://your-live-demo-link.com)** (¡reemplaza este enlace con tu URL de despliegue!)
+**[➡️ Ver App](https://generador-de-paleta-de-colores.netlify.app/)**
 
 ---
 
